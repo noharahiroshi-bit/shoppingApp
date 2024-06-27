@@ -16,7 +16,7 @@
           </li>
         </ul>
         <div :key="'0' + animatedCurrentKey">
-          <p class="no-more-goods">没有更多商品啦，敬请期待!!!</p>
+          <p class="no-more-goods">新商品をおたのしみに</p>
         </div>
       </transition-group>
     </div>
@@ -28,8 +28,8 @@
       <p>这是手机端应用，用手机微信，或浏览器扫码打开，或chrome浏览器手机调试模式下打开效果更佳哦。</p>
       <img src="../../static/url.png" height="280" width="280">
       <span slot="footer" class="dialog-footer">
-        <el-button @click="dialogVisible = false">取 消</el-button>
-        <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
+        <el-button @click="dialogVisible = false">キャンセル</el-button>
+        <el-button type="primary" @click="dialogVisible = false">決定</el-button>
       </span>
     </el-dialog>
   </div>

@@ -4,7 +4,7 @@
         <span class="toProfile" @click="toCart">
             <i class="el-icon-arrow-left" ></i>
         </span>
-        <h3>填写订单</h3>
+        <h3>オーダー</h3>
       </header>
       <main>
         <div class="order-form-item">
@@ -18,12 +18,12 @@
           </div>
         </div>
         <div class="order-form-item">
-          <p>合计：
+          <p>合計：
             <span class="price">￥{{ pay }}</span>
           </p>
         </div>
         <div class="order-form-item">
-          <span>地址：</span>
+          <span>住所：</span>
             <el-select v-model="selectAddress" :placeholder="addressPlaceHolder" v-if="address.length > 0">
               <el-option
                 v-for="(item,index) in address"
@@ -38,8 +38,8 @@
       </main>
       <footer class="order-form-footer">
         <div>
-            <span class="price-wrap">付款<span class="price">￥{{ pay }}</span></span>
-            <el-button type="danger" class="text-right" @click="toPay">去支付<i class="el-icon-arrow-right el-icon--right"></i></el-button>
+            <span class="price-wrap">支払<span class="price">￥{{ pay }}</span></span>
+            <el-button type="danger" class="text-right" @click="toPay">支払いへ<i class="el-icon-arrow-right el-icon--right"></i></el-button>
         </div>
       </footer>
     </div>
@@ -49,7 +49,7 @@
 export default {
   data() {
     return {
-      addressPlaceHolder: '请选择地址',
+      addressPlaceHolder: '届け先を選択してください',
       selectAddress: 0
     }
   },
@@ -81,7 +81,7 @@ export default {
       //解决主页与详情页切换时，菜单栏无法更新获取当前路由的问题
       this.$store.state.cartCounter++;
       this.$store.state.cartCounter--;
-      alert('支付成功');
+      alert('支払い完成！');
     }
   }
 }

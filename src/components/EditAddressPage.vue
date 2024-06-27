@@ -4,7 +4,7 @@
         <span class="toProfile" @click="toProfile">
             <i class="el-icon-arrow-left" ></i>
         </span>
-        <h3>我的收货地址</h3>
+        <h3>お届け先</h3>
       </header>
       <main>
         <ul class="all-address"  v-if="allAddress.length > 0">
@@ -12,13 +12,13 @@
             <p>{{ item.name }}</p>
             <p>{{ item.phone }}</p>
             <p>{{ item.city + item.detailAdd }}</p>
-            <el-button type="text" @click="toModifyAddress(index)">编辑</el-button>
+            <el-button type="text" @click="toModifyAddress(index)">編集</el-button>
           </li>
         </ul>
       </main>
       <footer>
         <el-button type="danger" @click="toAdressInputForm">
-          新增收货地址
+          届け先を追加
         </el-button>
       </footer>
     </div>

@@ -4,20 +4,20 @@
       <span class="toPrePage" @click="toPrePage">
           <i class="el-icon-arrow-left" ></i>
       </span>
-      <h3>登录</h3>
+      <h3>ログイン</h3>
     </header>
     <main>
       <div class="login">
         <el-form>
           <el-form-item>
-            <el-input v-model="username" placeholder="请输入帐号"></el-input>
+            <el-input v-model="username" placeholder="アカウントを入力してください"></el-input>
           </el-form-item>
           <el-form-item>
-            <el-input type="password" v-model="password" placeholder="请输入密码"></el-input>
+            <el-input type="password" v-model="password" placeholder="パスワードを入力してください"></el-input>
           </el-form-item>
           <el-form-item>
-            <el-button type="success" @click="login">登录</el-button>
-            <el-button>注册</el-button>
+            <el-button type="success" @click="login">ログイン</el-button>
+            <el-button>アカウントを作る</el-button>
           </el-form-item>
         </el-form>
       </div>
@@ -30,7 +30,7 @@ export default {
   name: 'login',
   data () {
     return {
-      username: '王小明',
+      username: '佐藤',
       password: '123456',
     }
   },

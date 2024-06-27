@@ -1,20 +1,20 @@
 <template>
   <div class="profile">
       <div class="login" v-if="!isLogin">
-          <el-button type="success" @click="toLogin">登录</el-button>
+          <el-button type="success" @click="toLogin">ログイン</el-button>
       </div>
       <div class="user" v-else>
           <header class="profile-header">
-            <h3>当前用户：{{ username }}</h3>
+            <h3>私：{{ username }}</h3>
           </header>
           <main class="profile-body">
             <div class="address">
-              <el-button @click.stop="toEditAddressPage">我的地址<i class="el-icon-arrow-right"></i></el-button>
+              <el-button @click.stop="toEditAddressPage">届け先<i class="el-icon-arrow-right"></i></el-button>
             </div>
           </main>
           <footer class="profile-footer">
             <div>
-              <el-button type="danger" @click="logout">退出登录</el-button>
+              <el-button type="danger" @click="logout">ログアウト</el-button>
             </div>
           </footer>
       </div>

@@ -1,16 +1,16 @@
 <template>
   <header class="home-header">
-    <h4 class="top-text"> 一小时达 </h4>
+    <h4 class="top-text"> AEHAOTA </h4>
     <div class="tap-menu">
       <el-tabs :tab-position="'top'" type="border-card" style="height: 39px;" v-model="goodsType" @tab-click="changeGoodsType">
-        <el-tab-pane label="全部" name="全部"></el-tab-pane>
-        <el-tab-pane label="水果" name="水果"></el-tab-pane>
-        <el-tab-pane label="蔬菜" name="蔬菜"></el-tab-pane>
-        <el-tab-pane label="肉蛋" name="肉蛋"></el-tab-pane>
-        <el-tab-pane label="速冻" name="速冻"></el-tab-pane>
-        <el-tab-pane label="酒饮" name="酒饮"></el-tab-pane>
-        <el-tab-pane label="乳品" name="乳品"></el-tab-pane>
-        <el-tab-pane label="零食" name="零食"></el-tab-pane>
+        <el-tab-pane label="すべてを見る" name="すべてを見る"></el-tab-pane>
+        <el-tab-pane label="シャツ" name="シャツ"></el-tab-pane>
+        <el-tab-pane label="パンツ" name="パンツ"></el-tab-pane>
+        <el-tab-pane label="ジンズ" name="ジンズ"></el-tab-pane>
+        <el-tab-pane label="アクセサリー" name="アクセサリー"></el-tab-pane>
+        <el-tab-pane label="シューズ" name="シューズ"></el-tab-pane>
+        <el-tab-pane label="ベーシック" name="ベーシック"></el-tab-pane>
+        <el-tab-pane label="靴下" name="靴下"></el-tab-pane>
       </el-tabs>
     </div>
   </header>
@@ -22,16 +22,16 @@ export default {
   data () {
     return {
       kindToType: new Map([
-        ['全部', 0],
-        ['水果', 1],
-        ['蔬菜', 2],
-        ['肉蛋', 3],
-        ['速冻', 4],
-        ['酒饮', 5],
-        ['乳品', 6],
-        ['零食', 7]
+        ['すべてを見る', 0],
+        ['シャツ', 1],
+        ['パンツ', 2],
+        ['ジンズ', 3],
+        ['アクセサリー', 4],
+        ['シューズ', 5],
+        ['ベーシック', 6],
+        ['靴下', 7]
       ]),
-      goodsType: '全部'
+      goodsType: 'すべてを見る'
     }
   },
   methods: {

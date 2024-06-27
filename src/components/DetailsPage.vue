@@ -23,7 +23,7 @@
       </div>
       <div class="goods-intruction">
         <p v-for="item in 30">
-          这是{{ goods.title }} 的商品详细介绍
+          これは{{ goods.title }}の商品詳細
         </p>
       </div>
     </main>
@@ -35,7 +35,7 @@
           </el-button>
         </router-link>
       </span>
-      <el-button @click="addGoodsToCart" type="danger">加入购物车</el-button>
+      <el-button @click="addGoodsToCart" type="danger">カートに入れる</el-button>
     </footer>
   </div>
 </template>

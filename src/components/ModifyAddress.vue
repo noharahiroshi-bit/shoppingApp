@@ -4,20 +4,20 @@
         <span class="toProfile" @click="toProfile">
             <i class="el-icon-arrow-left" ></i>
         </span>
-        <h3>修改收货地址</h3>
+        <h3>届け先を変更</h3>
       </header>
       <main>
         <el-form :model="newAddForm" :rules="rules" :label-position="'left'" ref="newAddForm" label-width="100px" class="newAddForm">
-          <el-form-item label="收货人" prop="name">
+          <el-form-item label="氏名" prop="name">
             <el-input v-model="newAddForm.name"></el-input>
           </el-form-item>
-          <el-form-item label="电话" prop="phone">
+          <el-form-item label="電話番号" prop="phone">
             <el-input v-model.number="newAddForm.phone"></el-input>
           </el-form-item>
-          <el-form-item label="所在城市" prop="city">
+          <el-form-item label="住所" prop="city">
             <el-input v-model="newAddForm.city"></el-input>
           </el-form-item>
-          <el-form-item label="收货地址" prop="detailAdd">
+          <el-form-item label="届け先" prop="detailAdd">
             <el-input v-model="newAddForm.detailAdd"></el-input>
           </el-form-item>
         </el-form>
@@ -25,8 +25,8 @@
       <footer>
         <el-form>
           <el-form-item>
-            <el-button type="primary" @click="submitForm('newAddForm')">保存修改</el-button>
-            <el-button type="danger" @click="deleteAddress">删除收货地址</el-button>
+            <el-button type="primary" @click="submitForm('newAddForm')">保存</el-button>
+            <el-button type="danger" @click="deleteAddress">届け先を削除</el-button>
           </el-form-item>
         </el-form>
       </footer>
@@ -38,9 +38,9 @@ export default {
   data() {
     let validatePhone = (rule, value, callback) => {
         if (!value) {
-            return callback(new Error('手机号不能为空'));
+            return callback(new Error('電話番号を入力してください'));
         } else if (!/^1[3-9]{1}[0-9]{9}$/.test(value)) {
-            return callback(new Error('手机号不正确'));
+            return callback(new Error('電話番号は正しくありません'));
         } else {
             callback();
         }
@@ -48,16 +48,16 @@ export default {
     return {
       rules: {
         name: [
-          { required: true, message: '请输入名字', trigger: 'blur' }
+          { required: true, message: '名前を入力してください', trigger: 'blur' }
         ],
         phone: [
           {required: true, validator: validatePhone, trigger: 'blur'}
         ],
         city: [
-          { required: true, message: '请输入所在城市', trigger: 'blur' }
+          { required: true, message: '住所を入力してください', trigger: 'blur' }
         ],
         detailAdd: [
-          { required: true, message: '请输入详细地址', trigger: 'blur' }
+          { required: true, message: '届け先を入力してください', trigger: 'blur' }
         ],
       }
     }

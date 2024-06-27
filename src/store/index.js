@@ -9,16 +9,16 @@ export default new Vuex.Store({
     isLogin: false,
     address:[
       {
-        name: '王小明',
+        name: '野原ひろし',
         phone: 13568978546,
-        city: '广州',
-        detailAdd: '天河区花城大道111号'
+        city: '東京',
+        detailAdd: '埼玉県春日部市'
       },
       {
-        name: '李小丽',
+        name: '野原みさえ',
         phone: 13568911546,
-        city: '北京',
-        detailAdd: '朝阳区朝阳北路111号'
+        city: '東京',
+        detailAdd: '埼玉県春日部市'
       },
     ],
     cartGoods: [], // 添加到购物车中的商品

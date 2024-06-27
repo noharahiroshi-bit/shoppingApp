@@ -1,7 +1,7 @@
 <template>
   <div class="cart">
       <header class="cart-header">
-        <h3>我的购物车</h3>
+        <h3>カート</h3>
       </header>
       <main class="cart-body" v-if="cartGoods.length > 0">
         <div class="wrap">
@@ -18,11 +18,11 @@
             </li>
           </ul>
           <div class="price-wrap">
-            <div class="amount">商品总价：
+            <div class="amount">商品総額：
               <span class="float-right">￥{{ amount }}</span>
             </div>
             <div class="red-packet">
-              <div>红包：
+              <div>クーポン：
                 <el-select v-model="redPacket" :placeholder="redPacketPlaceholder">
                   <el-option
                     v-for="item in redPackets"
@@ -36,18 +36,18 @@
               </div>
             </div>
             <div class="pay">
-              <div>商品实付：
+              <div>実際の支払額：
                 <span class="float-right">￥{{ amount - redPacket  }}</span>
               </div>
               <div>
-                <span>运费（实付满49免邮）：</span>
+                <span>送料（いくらになったら送料なし）：</span>
                 <span class="float-right">
                   <span class="postage" v-show="needPostage">￥{{ postage }}</span>
-                  <span class="postage" v-show="!needPostage">免邮</span>
+                  <span class="postage" v-show="!needPostage">送料なし</span>
                 </span>
               </div>
               <div>
-                <span class="text-left">合计：
+                <span class="text-left">合計：
                   <span class="float-right">￥{{ pay }}</span>
                 </span>
               </div>
@@ -57,11 +57,11 @@
       </main>
       <footer class="cart-footer" v-show="cartGoods.length > 0">
         <div class="toPay">
-            <el-button type="danger" class="text-right" @click="toOrderForm">去结算<i class="el-icon-arrow-right el-icon--right"></i></el-button>
+            <el-button type="danger" class="text-right" @click="toOrderForm">支払いへ<i class="el-icon-arrow-right el-icon--right"></i></el-button>
         </div>
       </footer>
       <div v-if="cartGoods.length === 0" class="empty-wrap">
-        你还没有添加任何商品哦~
+        商品を追加してないです
       </div>
   </div>
 </template>
@@ -77,12 +77,12 @@ export default {
   data () {
     return {
       redPackets: [
-        {id: 1, money: 10, limit: 70, label: '10元红包(满70可用)'},
+        {id: 1, money: 10, limit: 70, label: '10円クーポン　７０円になったら使える'},
         {id: 2, money: 20, limit: 100, label: '20元红包(满100可用)'},
         {id: 3, money: 30, limit: 150, label: '30元红包(满150可用)'}
       ],
       redPacket: '',
-      redPacketPlaceholder: '无可用红包',
+      redPacketPlaceholder: 'クーポンなし',
       postage: 6,
       needPostage: true
     }
@@ -121,7 +121,7 @@ export default {
         //没有可用红包时
         if (this.amount < this.redPackets[0].limit) {
           this.redPacket = '';
-          this.redPacketPlaceholder = '无可用红包';
+          this.redPacketPlaceholder = 'クーポンなし';
         }
         return true;
       } else {

@@ -22,10 +22,10 @@
         :visible.sync="dialogVisible"
         width="80%"
         :show-close="false">
-        <span>你确定删除该商品么？</span>
+        <span>この商品を削除してもよろしいですか？</span>
         <span slot="footer" class="dialog-footer">
-          <el-button @click="dialogVisible = false">取 消</el-button>
-          <el-button type="danger" @click="confirmDelete">删除</el-button>
+          <el-button @click="dialogVisible = false">キャンセル</el-button>
+          <el-button type="danger" @click="confirmDelete">削除</el-button>
         </span>
       </el-dialog>
     </div>
